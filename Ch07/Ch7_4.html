@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch7_4.html</title>
+</head>
+<script>
+// 遞迴階層函數
+function factorial(n) {
+   // 終止條件
+   if ( n == 1 ) return 1;
+   else          return n * factorial(n-1);
+}
+</script>
+<body>
+<h2>遞迴的階層函數</h2>
+<hr/>
+<script>
+var level = 5;
+var r = factorial(level);
+document.write(level + "! = " + r + "<br/>");  
+</script>
+</body>
+</html>

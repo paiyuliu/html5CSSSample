@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch15_6_2.html</title>
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('input#send').click(function() {
+      var str = "";
+      var courses = $('#courses').val();
+      str += "課程編號: " + courses + "<br/>";
+      var result = []; 
+      $('#langs :selected').each(function(i, selected){
+         result[i] = $(selected).text() + "(" + 
+                     $(selected).attr('value') + ")"; 
+      });
+      str += "語言編號: " + result.toString() + "<br/>";  
+      $('#output').html(str);
+      return false;
+   });
+});
+</script>
+</head>
+<body>
+<form>
+   <label for="courses">選擇課程: </label>
+   <select name="courses" id="courses">
+        <option value="1">程式設計</option>
+        <option value="2">網頁設計</option>
+        <option value="3">手機程式設計</option>
+        <option value="4">資料庫系統</option>
+   </select><hr/>
+   <label for="langs">選擇程式語言: </label>
+   <select name="langs" id="langs" multiple>
+        <option value="1">C/C++語言</option>
+        <option value="2">Java語言</option>
+        <option value="3">C#語言</option>
+        <option value="4">Visual Basic語言</option>
+   </select><hr/>
+   <input type="button" id="send" value="送出"/>
+</form>
+<div id="output"></div>
+</body>
+</html> 

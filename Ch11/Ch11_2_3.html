@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_2_3.html</title>
+<script>
+function getEle1() {
+   var p = document.querySelectorAll("p");
+   alert("P元素有: " + p.length + "個");
+}
+function getEle2() {
+   var hh = document.querySelectorAll("#header");
+   alert("id=header的元素: " + hh[0].tagName);
+}
+function getEle3() {
+   var node = document.querySelector(".hh");
+   alert("class=hh的第1個元素: " + node.tagName);
+}
+</script>
+</head>
+<body>
+<h2 class="pp">HTML元素H2</h2>
+<hr/>
+<p class="hh">HTML元素P</p>
+<p id="par1" class="hh">HTML元素P</p>
+<h2 id="header" class="hh">HTML元素H2</h2>
+<input type="button" onclick="getEle1()" value="取得P元素">
+<input type="button" onclick="getEle2()" value="取得id=header元素">
+<input type="button" onclick="getEle3()" value="取得第1個class=hh元素">
+</body>
+</html>

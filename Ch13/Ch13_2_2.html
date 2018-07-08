@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_2_2.html</title>
+<script>
+function showValue(objEle) {
+   alert(objEle.type + " : " + objEle.value);
+}
+function makeCheck() {
+   var objCheckbox = document.myForm.myCheck;
+   if (objCheckbox.checked == true)
+      objCheckbox.checked = false;
+   else
+      objCheckbox.checked = true;
+}
+</script>
+</head>
+<body>
+<h2>選擇鈕和核取方塊</h2>
+<hr/>
+<form name="myForm">
+<input type="radio" value="html" name="myRadio" onclick="showValue(this)">HTML
+<input type="radio" value="js" name="myRadio" onclick="showValue(this)">JavaScript
+<input type="radio" value="jq" name="myRadio" onclick="showValue(this)">jQuery
+<br/>
+<input type="checkbox" name="myCheck" checked>是否使用
+<input type="button" onclick="makeCheck()" value="切換核取">
+</form>
+</body>
+</html>

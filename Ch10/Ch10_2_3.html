@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch10_2_3.html</title>
+<script>
+function showAlert() {
+   alert("顯示的訊息文字");
+}
+function showConfirm() {
+   if (confirm("確認關閉?"))
+      alert("確認關閉....");
+   else
+      alert("取消關閉....");
+}
+function showPrompt() {
+   var str = prompt("請輸入數字?", "50");
+   alert("輸入數字= " + str);
+}
+</script>
+</head>
+<body>
+<h2>對話方塊</h2>
+<hr/>
+<form> 
+<input type="button" value="顯示訊息視窗" onclick="showAlert()">
+<input type="button" value="顯示確認視窗" onclick="showConfirm()">
+<input type="button" value="顯示提示視窗" onclick="showPrompt()">
+</form>
+</body>
+</html>

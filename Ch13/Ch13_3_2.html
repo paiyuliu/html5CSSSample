@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_3_2.html</title>
+<script>
+function optionData(multiple) {
+   var objSelect = document.myForm.mySelect;
+   var output = document.getElementById("output");
+   var str = "";
+   if (multiple == 1) { // 單選
+      var i = objSelect.selectedIndex;   
+      str = objSelect.options[i].index + "/";
+      str += objSelect.options[i].text + "/";
+      str += objSelect.options[i].value;
+   }
+   else { // 複選
+      str = "複選:<br/>"
+      for (var i = 0; i < objSelect.options.length; i++) {
+         if (objSelect.options[i].selected) {
+            str += objSelect.options[i].text + "<br/>";
+         }
+      }   
+   }
+   output.innerHTML = str;  
+}
+function changeText() {
+    var objSelect = document.myForm.mySelect
+    var value = document.myForm.optionName.value;
+    objSelect.options[objSelect.selectedIndex].text = value;
+}
+</script>
+</head>
+<body>
+<h2>HTMLOptionElement物件的屬性</h2>
+<hr>
+<form name="myForm">
+<select name="mySelect" size="3" multiple>
+<option value="value1" selected>HTML</option>
+<option value="value2">JavaScript</option>
+<option value="value3">CSS</option>
+</select>
+<input type="button" onclick="optionData(1)" value="單選">
+<input type="button" onclick="optionData(2)" value="複選"><br/>
+新選項 : <input type="text" name="optionName">
+<input type="button" onclick="changeText()" value="新增">
+</form><hr/>
+<div id="output"></div>
+</body>
+</html>

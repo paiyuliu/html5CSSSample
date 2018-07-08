@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_5_1.html</title>
+<style>
+.yellow { background-color : yellow; }
+</style>
+<script>
+function initial() {
+   var p = document.getElementById("myP");
+   p.addEventListener("mouseenter", 
+        function (event) {
+           event.target.setAttribute("class", "yellow");
+        }, false);
+   p.addEventListener("mouseleave",
+        function (event) {
+           event.target.setAttribute("class", "");
+        }, false);
+}
+</script>
+</head>
+<body onload="initial()">
+<h2>使用mouseenter與mouseleave事件</h2>
+<hr/>
+<p id="myP">JavaScript事件處理</p>
+</body>
+</html>

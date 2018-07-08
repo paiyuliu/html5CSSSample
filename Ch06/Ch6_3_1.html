@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch6_3_1.html</title>
+</head>
+<body>
+<h2>測試if條件敘述</h2>
+<hr/>
+<script>
+// 變數宣告
+var intValue = -50;
+// 第一個if條件敘述
+if ( intValue < 0 ) {
+   document.write("輸入值需要進一步處理...<br/>");
+   intValue = -intValue;
+}
+document.write("絕對值= "+ intValue +"<br/>");
+intValue = 150;
+// 第二個if條件敘述
+if ( intValue < -100 || intValue > 100 )
+    document.write("錯誤: 輸入值的範圍錯誤!<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_5_1.html</title>
+</head>
+<body>
+<h2>更多Input欄位的屬性</h2>
+<hr/>
+<form name="myForm" id="myForm">
+名稱: <input type="text" name="myUserName" autofocus><br/><br/>
+姓名: <input type="text" name="myName" required><br/><br/>
+電話: <input type="text" name="myPhone" placeholder="輸入電話號碼"><br/><br/>
+電子郵件地址: <input type="text" name="myEmail" 
+                     pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"><br/><br/>
+選擇課程: 
+<input type="text" name="myCourse" list="course_list"> 
+<datalist id="course_list">  
+   <option value="CS101" label="程式設計">
+   <option value="CS202" label="網頁設計">
+   <option value="CS303" label="Android程式設計">
+</datalist><br/><br/>
+<input type="submit" value="送出">
+<input type="reset"  value="重設">
+</form>
+</body>
+</html>

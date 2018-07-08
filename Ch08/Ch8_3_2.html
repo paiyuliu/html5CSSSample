@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_3_2.html</title>
+<script>
+// JavaScript函數
+function printCard() {
+   document.write("姓名 : " + this.name + "<br/>");
+   document.write("年齡 : " + this.age + "<br/>");
+   document.write("電話 : " + this.phone + "<br/>");
+   document.write("電郵 : " + this.email + "<br/><hr/>");
+}
+</script>
+</head>
+<body>
+<h2>在自訂物件新增方法</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objCard = new Object();
+// 新增物件屬性
+objCard.name = "江小魚";
+objCard.age = 20;
+objCard.phone = "03-33333333";
+objCard.email = "smallfish@yahoo.com.tw";
+// 新增方法
+objCard.print = printCard;
+// 使用匿名函數新增方法  
+objCard.displayName = function() {
+      document.write("姓名=> " + this.name + "<br/>");
+   }
+// 呼叫objCard物件的方法
+objCard.print();
+objCard.displayName();
+</script>
+</body>
+</html>   

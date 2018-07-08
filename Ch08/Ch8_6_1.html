@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_6_1.html</title>
+<script>
+// 建構函數
+function Position(x, y) {
+   this.getX = function() { return x; };
+   this.setX = function(newX) { x = newX; };
+   this.getY = function() { return y; };
+   this.setY = function(newY) { y = newY; };
+}
+</script>
+</head>
+<body>
+<h2>JavaScript的Private成員</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objP = new Position(10, 15);
+document.write("X = " + objP.getX() + "<br/>");
+document.write("Y = " + objP.getY() + "<br/>"); 
+// 設定Private成員
+objP.setX(20);
+objP.setY(35);
+document.write("新X = " + objP.getX() + "<br/>");
+document.write("新Y = " + objP.getY() + "<br/>");  
+</script>
+</body>
+</html>

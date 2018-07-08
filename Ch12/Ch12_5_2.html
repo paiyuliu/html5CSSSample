@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_5_2.html</title>
+<style>
+.pos { position : absolute;
+       top : 10px; left : 10px; 
+       height : 10px;  width : 10px;
+       background-color : blue }
+</style>
+<script>
+function showPos(event) {
+   // 觸發事件的位置
+   var c = document.getElementById("client");
+   c.innerHTML = "X=" + event.clientX + " Y=" + event.clientY;
+   var m = document.getElementById("myScreen");
+   m.innerHTML = "X=" + event.screenX + " Y=" + event.screenY;
+   // 移動<div>元素
+   var c = document.getElementById("myCursor");
+   c.style.left = event.clientX + "px";
+   c.style.top = event.clientY + "px";
+}
+function showInfo(event) {
+  var strMsg;
+  strMsg = "button: " + event.button + "<br/>";
+  strMsg += "altKey: " + event.altKey + "<br/>";
+  strMsg += "ctrlKey: " + event.ctrlKey + "<br/>";
+  strMsg += "shiftKey: " + event.shiftKey + "<br/>";
+  var info = document.getElementById("info");
+  info.innerHTML = strMsg;
+}
+function initial() {
+   var b = document.getElementById("myBody");
+   b.addEventListener("mousemove", showPos, false);
+   b.addEventListener("mousedown", showInfo, false);
+}
+</script>
+</head>
+<body id="myBody" onload="initial()">
+<h2>使用滑鼠事件取得游標位置和按鍵</h2>
+<hr/>
+<div id="myCursor" class="pos">
+</div>
+<p>移動滑鼠顯示游標位置</p>
+Client: <span id="client"></span><br/>
+Screen: <span id="myScreen"></span><br/>
+<div id="info"></div>
+</body>
+</html>

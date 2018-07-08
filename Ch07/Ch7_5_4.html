@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch7_5_4.html</title>
+<script>
+var square = function(x) {
+   return x * x;
+}
+</script>
+</head>
+<body>
+<h2>函數是陣列元素</h2>
+<hr/>
+<script>
+// 建立3個元素的JavaScript陣列
+var arr = new Array(3);
+arr[0] = square;   // 陣列元素是函數
+arr[1] = arr[0](5);
+arr[2] = arr[0](arr[1]);
+// 呼叫函數
+var r = arr[0](10);
+document.write("10的平方= " + r + "<br/>");
+document.write("a[1] = " + arr[1] + "<br/>");
+document.write("a[2] = " + arr[2] + "<br/>");
+</script>
+</body>
+</html>

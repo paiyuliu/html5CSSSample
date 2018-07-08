@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch7_5_3.html</title>
+<script> 
+function increment(x) {
+   // 巢狀函數
+   function makeIncrement(x) {
+      return x += 1;    
+   }
+   // 傳回函數的執行結果
+   return makeIncrement(x);
+}
+var inc = increment;  // 參考函數
+</script>
+</head>
+<body>
+<h2>傳回函數</h2>
+<hr/>
+<script>
+// 呼叫函數
+var r0 = inc(10);
+var r1 = increment(10);
+document.write("inc(10) = " + r0 + "<br/>");
+document.write("increment(10) = " + r1 + "<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch4_4.html</title>
+<style>
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 800px;
+  margin: 0 auto;
+  font-size: 10pt;
+}
+header, section, article, aside, footer {
+  display: block;
+}
+header {
+  width: 780px;
+  height: 110px;
+  color: #200f08;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #ddd3bf;
+}
+h1 {
+  font-size: 32pt;
+  text-align: left;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-left: 15px;
+  text-shadow: 1px 1px 2px #fff; 
+}
+nav {  
+  left: 0;  
+}
+nav ul {  
+  margin: 0 auto;  
+  list-style: none;  
+}  
+nav ul li {  
+  float: left;  
+}  
+nav ul li a {  
+  display: block;  
+  margin-right: 20px;  
+  width: 140px;  
+  font-size: 14px;
+  line-height: 4px;  
+  text-align: center;  
+  text-decoration: none;  
+  color: #777;  
+}  
+nav ul li a:hover {  
+  color: #fff;  
+}  
+nav ul li.selected a {  
+  color: #fff;  
+}  
+nav ul li.subscribe a {  
+  margin-left: 22px;  
+  padding-left: 33px;  
+}  
+aside {
+  float: right;
+  width: 200px;
+  min-height: 400px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0px;
+  border-left: 2px dotted #b2a497;
+  border-right: 2px dotted #b2a497;
+}
+section {
+  float: left;
+  width: 500px;
+  min-height: 400px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0px;
+  border-left: 2px dotted #b2a497;
+}
+section h2 {
+  font-size: 14pt;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #493831;
+  padding-bottom: 10px;
+  margin: 0;
+}
+article {
+  margin-top: 10px;
+  border-bottom: 2px dotted #b2a497;
+}
+footer{
+  clear: both;
+  width: 780px;
+  height: 50px;
+  padding: 10px;
+  color: #200f08 ;
+  background: #ddd3bf;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>陳小安程式設計之家</h1>
+  <nav>
+    <ul>
+      <li><a  href="/News/">最新消息</a></li>
+      <li><a  href="/Services/">公司服務</a></li>
+      <li><a  href="/Resources/">相關資源</a></li>
+      <li><a  href="/About/">關於網站</a></li>
+    </ul>
+  </nav>
+</header>
+<section>
+  <article>
+    <h2>歡迎光臨程式設計之家</h2>
+    <p>程式設計之家是一個JavaScript+HTML 5技術網站，
+       除了JavaScript和HTML 5的技術服務外，
+       也提供網站架設服務。</p> 
+  </article>
+  <article>
+    <h2>服務說明</h2>
+    <p>程式設計之家提供專業的公司或個人架站服務，
+       包含公司網站、銷售平台、部落格、臉書等，
+       提供全方位網站資源架設和網路行銷。</p>
+    <p>程式設計之家也提供相關技術的顧問服務，
+       不論是客戶端或伺服端網頁設計技術、資料庫
+       或行動平台的網站或應用程式開發，
+       都提供全方位的技術服務。</p>
+    <p><a href="/Services/">更多服務</a></p>
+  </article>
+</section>
+<aside>
+  <h2>相關資源網站</h2>
+  <ul>
+   <li><a href="">HTML5教學網站</a></li>
+   <li><a href="">JavaScript教學網站</a></li>
+   <li><a href="">CSS教學網站</a></li>
+  </ul>
+  <p><a  href="/Resources/">更多資源</a></p>
+</aside>
+<footer>
+  <small>Copyright &copy; 2016 陳會安 版權所有</small>
+</footer>
+</body>
+</html>

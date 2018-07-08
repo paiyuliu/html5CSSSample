@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_3_1.html</title>
+</head>
+<body>
+<h2>使用Object物件建立自訂物件</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objCard = new Object();
+// 新增物件屬性
+objCard.name = "陳允傑";
+objCard.age = 5;
+objCard.phone = "02-22222222";
+objCard.cellphone = "0938222222";
+objCard.email = "hueyan@ms2.hinet.net";
+document.write("手機(刪除前) : " + objCard.cellphone + "<br/>");
+delete objCard.cellphone;  // 刪除屬性
+document.write("手機(刪除後) : " + objCard.cellphone + "<br/>");
+// 顯示物件屬性
+document.write("姓名 : " + objCard["name"] + "<br/>");
+document.write("年齡 : " + objCard["age"] + "<br/>");
+document.write("電話 : " + objCard["phone"] + "<br/>");
+document.write("電郵 : " + objCard["email"] + "<br/>");
+</script>
+</body>
+</html>

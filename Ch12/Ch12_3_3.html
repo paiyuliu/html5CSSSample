@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_3_3.html</title>
+<style type="text/css">
+.red { color: red; }
+</style>
+<script>
+// 事件處理程序
+function showAlert(event){
+   event.preventDefault();
+   var log = document.getElementById("log");
+   log.innerHTML = "預設事件行為: " +
+                  event.type + " 被阻擋";
+}
+</script>
+</head>
+<body>
+<h2>取消預設行為</h2>
+<hr/>
+<a id="myA" href="http://www.hinet.net">沒有作用的超連結</a>
+<hr/>
+<script>
+var a = document.getElementById("myA");
+a.addEventListener("click", showAlert, false);
+</script>
+<div id="log" class="red"></div>
+</body>
+</html>

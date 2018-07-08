@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_3_2.html</title>
+<script>
+function showParentNode() {
+   var objLi = document.getElementById("myLI1");
+   var objNode = objLi.parentNode;
+   alert(objNode.nodeName);
+}
+function showNode1() {
+   var objLi = document.getElementById("myLI2");
+   var objNode = objLi.previousSibling;
+   alert(objNode.firstChild.data);
+}
+function showNode2() {
+   var objLi = document.getElementById("myLI3");
+   var objNode = objLi.nextSibling;
+   alert(objNode.innerHTML);
+}
+</script>
+</head>
+<body>
+<h2>瀏覽DOM節點</h2>
+<hr/>
+<ul id="myUL">
+   <li>CSS
+   <li style="color:red" id="myLI1" 
+       onclick="showParentNode()">JavaScript
+   <li style="color:red" id="myLI2"
+       onclick="showNode1()">VBScript
+   <li style="color:red" id="myLI3"
+       onclick="showNode2()">XML
+   <li>HTML    
+</ul>
+</body>
+</html>

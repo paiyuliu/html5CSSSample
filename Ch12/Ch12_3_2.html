@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_3_2.html</title>
+<style>
+.large { font-size: 15pt; }
+.small { font-size: 10pt; }
+.line { border: 1px solid #333; cursor: pointer; }
+</style> 
+<script>
+function showElement(event) {
+   alert(event.target.tagName);
+   if (event.target.tagName == "SPAN") {
+      var className = event.target.id;      
+      var p = document.getElementById("myP");
+      p.setAttribute("class", className); 
+      event.stopPropagation();
+   }
+}
+</script>
+</head>
+<body>
+<h2>取消事件傳播</h2>
+<hr/>
+<div id="switcher">
+<span class="line" id="default">標準</span>
+<span class="line" id="large">放大</span>
+<span class="line" id="small">縮小</span>
+</div>
+<p id="myP">JavaScript事件處理</p>
+<script>
+var div = document.getElementById("switcher");
+div.addEventListener("click", showElement, false);
+var span1 = document.getElementById("default");
+span1.addEventListener("click", showElement, false);
+var span2 = document.getElementById("large");
+span2.addEventListener("click", showElement, false);
+var span3 = document.getElementById("small");
+span3.addEventListener("click", showElement, false);
+</script>
+</body>
+</html>

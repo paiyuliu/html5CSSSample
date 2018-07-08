@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch7_1_2.html</title>
+</head>
+<body>
+<script>
+// 變數宣告
+var strMsg = "HTML 5+CSS3+JavaScript網頁製作徹底研究"; 
+var strURLcode, strOriginal;
+strURLcode = escape(strMsg);  // 進行加碼
+document.write("原始字串 : " + strMsg + "<br/>");
+document.write("URL編碼 : " + strURLcode + "<br/>");
+strOriginal = unescape(strURLcode); // 還原字串
+document.write("還原的字串 : " + strOriginal + "<br/>");
+</script>
+</body>
+</html> 

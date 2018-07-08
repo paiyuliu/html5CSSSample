@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_6a.html</title>
+<script>
+function createStorage() {
+   sessionStorage.setItem("name", "陳允傑");
+}
+function getStorage() {
+   alert("姓名: " + sessionStorage.getItem("name")); 
+   alert("Hello " + sessionStorage.name);
+}
+function removeStorage() {
+   sessionStorage.removeItem("name");
+}
+</script>
+</head>
+<body>
+<h2>HTML5的客戶端儲存體-sessionStorage</h2>
+<hr/>
+<form>
+<input type="button" onclick="createStorage()" value="新增sessionStorage">
+<input type="button" onclick="getStorage()" value="取得sessionStorage">
+<input type="button" onclick="removeStorage()" value="刪除sessionStorage">
+</form>
+</body>
+</html> 

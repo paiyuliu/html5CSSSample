@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch10_2_2.html</title>
+<script>
+var winID = null;
+function openFullWindow(url, winname) {
+   var strFeatures = "left=0,top=0";
+   if (window.screen){
+      // 取得螢幕的解析度
+      var maxh = screen.availHeight - 30;
+      var maxw = screen.availWidth - 10;
+      strFeatures += ",height=" + maxh;
+      strFeatures += ",width=" + maxw;
+   }
+   else
+      strFeatures += ",resizable";
+   winID = window.open(url,winname,strFeatures);
+}
+</script>
+<body>
+<h2>開啟全螢幕視窗</h2>
+<hr/>
+<form>
+<input type=button value="開啟全螢幕視窗" 
+       onclick="openFullWindow('Ch10_2_1.html','JS')">
+</form>
+</body>
+</html>

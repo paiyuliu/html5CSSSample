@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_4_2.html</title>
+<script>
+// 表單驗證
+function validate(event) {
+   var objForm = document.myForm;
+   var strUsername = objForm.myUserName.value;
+   var strName = objForm.myName.value;
+   var error = 0;
+   if (strUsername.length == 0 || strName.length == 0) {
+      alert("沒有輸入使用者名稱或姓名!");
+      error++;
+   }
+   if (!(objForm.myGender[0].checked || objForm.myGender[1].checked)) {
+      alert("請輸入性別!");
+      error++;
+   }
+   if (objForm.mySelect.options[0].selected) {
+      alert("請選擇個人收入!");
+      error++;
+   }
+   if (error != 0 ) {
+      event.preventDefault();
+      return false;
+   }
+   else return true;
+}
+// 檢查姓名
+function checkName(event) {
+   objEle = event.target;
+   if (objEle.value == "") {
+      alert("請輸入姓名!");
+   }
+}
+// 檢查使用者名稱
+function checkUserName(event) {
+   objEle = event.target;
+   if (objEle.value.length < 5) {
+      alert("請輸入使用者名稱(大於5個字元)!");        
+   }
+}
+</script>
+</head>
+<body>
+<h2>表單欄位驗證與相關的事件</h2>
+<hr/>
+<form name="myForm" id="myForm" action="validate.php" method="post">
+名稱 : <input type="text" name="myUserName" id="myUserName"><br/>
+密碼 : <input type="password" name="myPassword"><br/>
+姓名 : <input type="text" name="myName" id="myName"><br/>
+性別 : <input type="radio" name="myGender" value="m">男 
+       <input type="radio" name="myGender" value="f">女<br/>
+<select name="mySelect">
+<option value="0" selected>薪水</option>
+<option value="1">少於$20,000</option>
+<option value="2">$20,000~$30,000</option>
+<option value="3">$30,000~$40,000</option>
+<option value="4">$40,000以上</option>
+</select><br/>
+<input type="submit" value="送出">
+<input type="reset"  value="重設">
+</form>
+<script>
+var myForm = document.getElementById("myForm");
+myForm.addEventListener("submit", validate, false);
+var user = document.getElementById("myUserName");
+user.addEventListener("change", checkUserName, false);
+var name = document.getElementById("myName");
+name.addEventListener("blur", checkName, false);
+</script>
+</body>
+</html>

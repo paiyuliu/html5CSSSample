@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_2_1.html</title>
+<script>
+function makeDisable() {
+   var objText = document.myForm.myName;
+   if (objText.disabled == true)
+      objText.disabled = false;
+   else
+      objText.disabled = true;
+}
+function makeSize(intSize) {
+   var objText = document.forms[0].myName;
+   objText.size = intSize;
+   objText.maxLength = intSize;
+}
+function makeReadOnly() {
+   var objText = document.myForm.elements[0];
+   if (objText.readOnly == true)
+       objText.readOnly = false;
+   else
+       objText.readOnly = true;
+}
+function makeSelect() {
+   var objText = document.myForm.myName;
+   objText.select();
+   objText.focus();
+}
+function getFocus() {
+   document.forms[0].elements[1].focus();
+}
+function lostFocus() {
+   document.forms[0].myPassword.blur();
+}
+</script>
+</head>
+<body>
+<h2>文字方塊、密碼和按鈕欄位</h2>
+<hr/>
+<form name="myForm">
+姓名: <input type="text" name="myName" value="陳允傑"><br/>
+密碼: <input type="password" name="myPassword"><br/>
+<input type="button" onclick="makeSize(5)" value="Size=5 ">
+<input type="button" onclick="makeSize(20)" value="Size=20">
+<input type="button" onclick="makeReadOnly()" value="唯讀">
+<input type="button" onclick="makeDisable()" value="欄位無效"><br/>
+<input type="button" onclick="makeSelect()" value="選擇姓名">
+<input type="button" onclick="getFocus()" value="密碼取得焦點">
+<input type="button" onclick="lostFocus()" value="密碼失去焦點">
+</form>
+</body>
+</html>

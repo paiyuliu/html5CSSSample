@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_6.html</title>
+<script>
+var maxChar = 100;  // 最大字數
+function showCounter(event) {
+   var msg = event.target.value; // 欄位值
+   var numChar = msg.length;
+   var charRemain = maxChar - numChar;
+   if (numChar <= maxChar) {
+      var c = document.getElementById("counter");
+      c.innerHTML = charRemain;
+   }
+   else {
+      event.preventDefault();
+   }   
+}
+function initial() {
+   var m = document.getElementById("memo");
+   m.addEventListener("keydown", showCounter, false);
+   var c = document.getElementById("counter");
+   c.innerHTML = maxChar;
+}
+</script>
+</head>
+<body onload="initial()">
+<p>你還可以輸入 
+<span id="counter"></span> 個中文字或英文字元</p>
+<textarea id="memo" cols="50" rows="5"></textarea>
+</body>
+</html>

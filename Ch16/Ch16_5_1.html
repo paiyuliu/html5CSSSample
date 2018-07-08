@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8"/>
+<title>Ch16_5_1.html</title>
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#search').on('click', function () {
+      var stock = $('#stocks').val()
+       // 送出Ajax請求 
+      $.ajax({
+          type: "GET",
+          url: "http://finance.google.com/finance/info?client=ig&q=" + stock,
+          dataType: "text",  // 傳回JSON字串
+          success: function (response) {
+              // 刪除前3個字元才是JSON字串 
+              var jsonStr = response.substring(3);
+              var json = $.parseJSON(jsonStr);  // 剖析字串               
+              $("#result").empty();
+              $("#result").append("<li>股票巿場: " + json[0].e + "</li>");
+              $("#result").append("<li>股票編號: " + json[0].id + "</li>");
+              $("#result").append("<li>收盤價: " + json[0].l + "</li>");
+              $("#result").append("<li>成交價: " + json[0].l_cur + "</li>");
+              $("#result").append("<li>漲趺: " + json[0].c + "</li>");
+              $("#result").append("<li>漲趺幅: " + json[0].cp + "</li>");
+          },
+          timeout: 6000,  // Timeout時間6秒鐘
+          error: function() {  // 失敗
+              alert("錯誤: 無法完成Ajax請求..");
+          }
+      });
+   });    
+}); 
+</script>
+</head>
+<body>
+<label for="stocks">選擇股票: </label>
+<select name="stocks" id="stocks">
+   <option value="NYSE:TSM" selected>台積電ADR</option>
+   <option value="NYSE:UMC">聯電ADR</option>
+   <option value="NYSE:ASX">日月光ADR</option>
+   <option value="NYSE:AUO">友達ADR</option>
+   <option value="NYSE:CHT">中華電信ADR</option>
+   <option value="NASD:SPIL">矽品ADR</option>
+</select>
+<button id="search">查詢</button> 
+<ul id="result">
+</ul>
+</body>
+</html>

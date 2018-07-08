@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_3_3.html</title>
+<script>
+function addOption(pos) {
+   var objSelect = document.myForm.mySelect;
+   // 取得欄位值
+   var strName = document.myForm.myOptionName.value;
+   var strValue = document.myForm.myOptionValue.value;
+   // 建立Option物件
+   var objOption = new Option(strName,strValue);
+   pos = objSelect.options.length;
+   objSelect.add(objOption, pos);  // 新增
+}
+function deleteOption() {
+   var objSelect = document.myForm.mySelect;
+   objSelect.remove(objSelect.selectedIndex);
+}
+function showOption() {
+   var objSelect = document.myForm.mySelect;
+   var name = objSelect.options[objSelect.selectedIndex].text;
+   var value = objSelect.options[objSelect.selectedIndex].value;
+   alert(name + " = " + value);
+}
+</script>
+</head>
+<body>
+<h2>新增與刪除option選項欄位</h2>
+<hr/>
+<form name="myForm">
+<select name="mySelect">
+<option value="value1" Selected>HTML</option>
+<option value="value2">JavaScript</option>
+<option value="value3">CSS</option>
+</select>
+<input type="button" onclick="showOption()" value="顯示">
+<input type="button" onclick="deleteOption()" value="刪除"><br/>
+選項名稱: <input type="text" name="myOptionName" value="CSS"><br/>
+選項的值: <input type="text" name="myOptionValue" value="value4">
+<input type="button" onclick="addOption()" value="新增">
+</form>
+</body>
+</html> 

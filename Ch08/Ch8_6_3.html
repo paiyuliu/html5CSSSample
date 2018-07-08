@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_6_3.html</title>
+<script>
+// 基礎物件的建構函數
+function Position(x, y, color) {
+   this.x = x;
+   this.y = y;
+   this.color = color;
+}
+// 繼承物件Circle的建構函數
+function Circle(r) {
+   this.r = r;
+   this.info = showCircleInfo;
+   // 物件circle()的方法
+   function showCircleInfo() {
+      var result = 3.1415926 * this.r * this.r;
+      document.write("半徑 : " + this.r + "<br/>");
+      document.write("X座標 : " + this.x + "<br/>");
+      document.write("Y座標 : " + this.y + "<br/>");
+      document.write("圖形色彩 : " + this.color + "<br/>");
+      document.write("圓面積 : " + result + "<br/>"); 
+   }
+}
+// Prototype物件的繼承
+Circle.prototype = new Position();
+</script>
+</head>
+<body>
+<h2>Prototype物件的繼承</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objCircle = new Circle(2);
+// 設定物件屬性
+objCircle.x = 100;
+objCircle.y = 50;
+objCircle.color = "green"; 
+// 執行物件方法info
+objCircle.info();
+</script>
+</body>
+</html>

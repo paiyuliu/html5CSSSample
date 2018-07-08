@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch10_5_2.html</title>
+<script>
+// 開啟新文件, 寫入文件內容
+function openDocument(){
+  var win=window.open("","win","width=300,height=100");
+  win.document.open("text/html","replace");
+  win.document.write("<html><head><title>新文件</title></head>");
+  win.document.write("<body>這是一份新文件</body></html>");
+  win.document.close();
+}
+</script>
+</head>
+<body>
+<h2>開啟與寫入文件</h2>
+<hr/>
+<form>
+<input type="button" onclick="openDocument()" value="開啟一份新文件">
+</form>
+</body>
+</html>

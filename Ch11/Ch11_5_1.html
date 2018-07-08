@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_5_1.html</title>
+<script>
+function setSrc(strSrc) {
+   var img = document.getElementById("myImg");
+   img.src = strSrc;
+}
+function getSrc() {
+   var img = document.getElementsByTagName("img");
+   alert(img.item(0).src);
+}
+function switchSrc() {
+   var objEle = document.getElementsByTagName("img");
+   if (objEle[1].getAttribute("src") == "2.gif")
+      objEle[1].setAttribute("src", "3.gif");
+   else
+      objEle[1].setAttribute("src", "2.gif");
+}
+</script>
+</head>
+<body>
+<h2>存取HTML元素的屬性</h2>
+<hr/>
+<img id="myImg" src="1.gif"/>
+<img src="2.gif"/>
+<form>
+<input type="button" onclick="setSrc('3.gif')" value="改成數字3">
+<input type="button" onclick="getSrc()" value="取得src屬性">
+<input type="button" onclick="switchSrc()" value="切換src屬性">
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_6_4a.html</title>
+<script>
+// 建立命名空間
+var myApp = {};
+(function(c) {
+    // 宣告區域變數
+    var count = 1;
+    // 建立內層函數
+    c.next = function() { return count++; };
+    c.reset = function() { count = 1; };
+})(myApp);          
+</script>
+</head>
+<body>
+<h2>在函數包裝者物件新增命名空間參數</h2>
+<hr/>
+<script>
+var no1 = myApp.next();
+var no2 = myApp.next();
+myApp.reset();
+var no3 = myApp.next();
+document.write(no1 + "/" + no2 + "/" + no3 + "<br/>");
+</script>
+</body>
+</html>

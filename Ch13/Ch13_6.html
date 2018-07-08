@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_6.html</title>
+<script>
+function createStorage() {
+   localStorage.setItem("name", "陳會安");
+}
+function getStorage() {
+   alert("姓名: " + localStorage.getItem("name")); 
+   alert("Hello " + localStorage.name);
+}
+function removeStorage() {
+   localStorage.removeItem("name");
+}
+</script>
+</head>
+<body>
+<h2>HTML5的客戶端儲存體-localStorage</h2>
+<hr/>
+<form>
+<input type="button" onclick="createStorage()" value="新增localStorage">
+<input type="button" onclick="getStorage()" value="取得localStorage">
+<input type="button" onclick="removeStorage()" value="刪除localStorage">
+</form>
+</body>
+</html> 

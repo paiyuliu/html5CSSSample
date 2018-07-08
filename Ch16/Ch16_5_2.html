@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8"/>
+<title>Ch16_5_2.html</title>
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#keyword').val('JavaScript'); // 指定預設值
+    $('#search').on('click', function () {
+      // 取得輸入的關鍵字
+      var keyword = $('#keyword').val();
+      var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=" +
+                       keyword + "&maxResults=5&projection=lite";
+      // 送出Ajax請求, 取得JSON 
+      $.getJSON(googleAPI, function (response) {
+          $("#result").empty();
+          for (var i = 0; i < response.items.length; i++) {
+              var item = response.items[i];
+              var str = "<li>";
+              str += "<img src='" + item.volumeInfo.imageLinks.thumbnail + "' width='60' height='80'>";
+              str += "<p><b>書名: " + item.volumeInfo.title + "</b></p>";
+              str += "<p>出版商: " + item.volumeInfo.publisher + "</p>";
+              str += "<p>出版日: " + item.volumeInfo.publishedDate + "</p>";
+              str += "</li>";
+              $("#result").append(str);
+          }
+      });
+   });    
+}); 
+</script>
+</head>
+<body>
+<h1>Google圖書查詢</h1>
+<input type="text" name="keyword" id="keyword"/>
+<button id="search">搜尋</button> 
+<ul id="result">
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_5_2.html</title>
+<script>
+function calTotal() {
+   var num = document.getElementById("number");
+   var dataset = num.dataset;
+   var step = parseFloat(dataset.step);
+   var data = num.textContent.split(" ");
+   var sum = 0;
+   for (var i = 1; i <= data.length; i += step) {
+      sum += parseFloat(data[i-1]);
+   }   
+   alert("奇數和 = " + sum);   
+}
+</script>
+</head>
+<body>
+<h2>存取HTML 5的data-*屬性</h2>
+<hr/>
+<div id="number" data-step="2">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+</div>
+<form>
+<input type="button" onclick="calTotal()" value="計算總和">
+</form>
+</body>
+</html>

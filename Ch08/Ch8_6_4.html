@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_6_4.html</title>
+<script>
+// 建立命名空間
+var myApp = (function() {
+    // 宣告區域變數
+    var count = 1;
+    // 建立內層函數
+    var inc = function() { return count++; };
+    var clear = function() { count = 1; };
+    // 傳回使用介面的物件 
+    return { 
+       next: inc,
+       reset: clear
+    };
+})();          
+</script>
+</head>
+<body>
+<h2>JavaScript的命名空間</h2>
+<hr/>
+<script>
+var no1 = myApp.next();
+var no2 = myApp.next();
+myApp.reset();
+var no3 = myApp.next();
+document.write(no1 + "/" + no2 + "/" + no3 + "<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_5_1.html</title>
+<script>
+// 物件的建構函數
+function NameCard(name,age,phone,email) {
+   this.name = name;        // 物件屬性
+   this.age = age;
+   this.phone = phone;
+   this.email = email;
+}
+function Position(x, y, color) {
+   this.x = x;
+   this.y = y;
+   this.color = color;
+}
+</script>
+</head>
+<body>
+<h2>instanceof運算子</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objCard = new NameCard();
+var objPosition = new Position(); 
+// 檢查物件的類別
+if (objCard instanceof NameCard)
+   document.write("objCard屬於NameCard類別<br/>");
+if (objPosition instanceof NameCard)
+   document.write("objPosition屬於NameCard類別<br/>");  
+if (objPosition instanceof Position)
+   document.write("objPosition屬於Position類別<br/>");  
+</script>
+</body>
+</html>

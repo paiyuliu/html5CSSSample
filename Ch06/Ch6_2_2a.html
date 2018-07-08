@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch6_2_2a.html</title>
+</head>
+<body>
+<h2>活用||邏輯運算子</h2>
+<hr/>
+<script>
+var a = 10;
+var b = 20;
+var c = 0;
+var d = -1;
+var e = null;
+var f = a || b;   // a>0即true, f=a
+var g = c || b;   // c=0即false, g=b
+var h = d || 10   // d<0即true, h=d
+var i = e || 25;  // e=null即false, i=25
+document.write("a= " + a +" b= " + b +"<br/>");
+document.write("c= " + c +" d= " + d +"<br/>");
+document.write("f = a || b = " + f +"<br/>");
+document.write("g = c || b  = " + g +"<br/>");
+document.write("h = d || 10  = " + h +"<br/>");
+document.write("i = e || 25  = " + i +"<br/>");
+</script>
+</body>
+</html>

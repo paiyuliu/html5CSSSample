@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_1_2.html</title>
+<script>
+function showElements(no) {
+   var objF = document.forms[no];
+   var strMsg = "";
+   for (var i = 0; i < objF.length; i++){
+     var objE = objF.elements[i];
+     strMsg += objE.type + ":" + objE.name + "=" + objE.value + "<br/>";
+   }
+   var show = document.getElementById("show");
+   show.innerHTML = strMsg;
+}
+function getUserName() {
+   var objE = document.myForm1.myUserName;
+   alert(objE.value);
+}
+function getPassword() {
+   var objE = document.forms[0].elements[1];
+   alert(objE.value);
+}
+</script>
+</head>
+<body>
+<h2>取得表單和表單欄位</h2>
+<hr/>
+<form name="myForm1">
+名稱 : <input type="text" name="myUserName"><br/>
+密碼 : <input type="password" name="myPassword"><br/>
+<input type="button" name="B1" onclick="showElements(0)" value="表單1元素">
+</form><hr/>
+<form name="myForm2">
+姓名 : <input type="text" name="myName"><br/>
+<input type="button" name="B2" onclick="showElements(1)" value="表單2元素">
+</form>
+<div id="show"></div>
+<form>
+<input type="button" name="B3" onclick="getUserName()" value="取得名稱">
+<input type="button" name="B4" onclick="getPassword()" value="取得密碼">
+</form>
+</body>
+</html>

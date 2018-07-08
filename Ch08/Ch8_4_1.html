@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch8_4_1.html</title>
+<script>
+// 物件的建構函數
+function NameCard(name,age,phone,email) {
+   this.name = name;        // 物件屬性
+   this.age = age;
+   this.phone = phone;
+   this.email = email;
+   this.print = printCard;  // 物件方法
+}
+// JavaScript函數
+function printCard() {
+   document.write("姓名 : " + this.name + "<br/>");
+   document.write("年齡 : " + this.age + "<br/>");
+   document.write("電話 : " + this.phone + "<br/>");
+   document.write("電郵 : " + this.email + "<br/><hr/>");
+}
+</script>
+</head>
+<body>
+<h2>使用建構函數建立物件</h2>
+<hr/>
+<script>
+// 建立自訂物件
+var objMyCard = new NameCard("陳小安", 20, 
+                "02-22222222","hueyan@ms2.hinet.net");
+var objCard = new NameCard();  // 建立物件
+// 設定屬性
+objCard.name = "江小魚";
+objCard.age = 20;
+objCard.phone = "03-33333333";
+objCard.email = "hueyan@yahoo.com.tw";
+// 呼叫objMyCard物件的方法
+objMyCard.print();
+// 呼叫objCard物件的方法
+objCard.print();
+</script>
+</body>
+</html>

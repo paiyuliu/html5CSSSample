@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch7_2_3.html</title>
+<script>
+// 溫度轉換
+function convert2F(c) {
+   var f;
+   f = (9.0 * c) / 5.0 + 32.0;
+   return f;
+}
+function convert2C(f) {
+   var c;
+   c = (5.0 / 9.0 ) * (f - 32);
+   return c;
+}
+</script>
+</head>
+<body>
+<h2>JavaScript函數的傳回值</h2>
+<hr/>
+<script>
+var f = convert2F(20);
+document.write("攝氏 20 度=華氏 " + f + "度 <br/>");
+var c = convert2C(86);
+document.write("華氏 86 度=攝氏 " + c + "度 <br/>");
+</script>
+</body>
+</html>

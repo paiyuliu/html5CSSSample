@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch13_3_1.html</title>
+<script>
+function makeDisable() {
+   var objSelect = document.myForm.mySelect;
+       objSelect.disabled = (objSelect.disabled) ? false : true;
+}
+function userChoice() {
+   var objSelect = document.myForm.elements[0];
+   var str = "選項個數: " + objSelect.length + "\n";
+   alert(str + objSelect.options[objSelect.selectedIndex].text);
+}
+function setSize(objForm) {
+   var objSelect = document.forms[0].mySelect;
+   if (objSelect.size == "3") {
+      objSelect.size = "1";
+      objSelect.multiple = false;
+   }
+   else {
+      objSelect.size = "3";
+      objSelect.multiple = true;
+   }
+}
+</script>
+</head>
+<body>
+<h2>HTMLSelectElement物件的屬性和方法</h2>
+<hr/>
+<form name="myForm" id="myForm">
+<select name="mySelect">
+<option value="html" selected>HTML</option>
+<option value="javascript">JavaScript</option>
+<option value="css">CSS</option>
+</select>
+<script>
+var myForm = document.getElementById("myForm");
+// 註冊change事件的事件處理
+myForm.addEventListener("change", function() {
+   var selected = document.forms["myForm"].mySelect.value;
+   alert("選擇vlaue屬性值: " + selected);
+}, false);
+</script>
+<input type="button" onclick="userChoice()" value="選擇">
+<input type="button" onclick="setSize()" value="切換成清單方塊">
+<input type="button" onclick="makeDisable()" value="是否有作用">
+</form>
+</body>
+</html>

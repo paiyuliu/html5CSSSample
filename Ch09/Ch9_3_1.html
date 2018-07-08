@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch9_3_1.html</title>
+</head>
+<body>
+<h2>JavaScript的一維陣列與for/in迴圈</h2>
+<hr/>
+<script>
+var tips = new Array(100,200,500);
+var username = new Array(5);
+username[0] = "Joe";
+username[1] = "Jane";
+username[2] = "Tony";
+username[3] = "Tom";
+username[4] = "Merry";
+var arr = [];   // 建立一個空陣列
+arr[0] = 98.5;
+arr[1] = 102.3;
+arr[2] = 44.5;
+// 使用迴圈顯示陣列值
+for(var i = 0; i < tips.length; i++){
+   document.write(tips[i] + "<br/>");
+}
+for(var i = 0; i < 5; i++){
+   document.write(username[i] + "<br/>");
+}
+// 使用for/in迴圈顯示陣列值
+for (ele in arr){
+   document.write("元素: " + ele + " = " +
+                   arr[ele] + "<br/>");
+}
+var prop;
+var objAddress = new Object();  // 建立物件
+objAddress.name = "陳會安";
+objAddress.age = "40";
+objAddress.phone = "02-22222222";
+objAddress.email = "hueyan@ms2.hinet.net";
+// for/in迴圈敘述
+for (prop in objAddress){
+   document.write("屬性: " + prop + "=" +
+                  objAddress[prop] + "<br/>");
+}
+</script>
+</body>
+</html>

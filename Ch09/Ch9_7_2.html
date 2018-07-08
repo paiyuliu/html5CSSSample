@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch9_7_2.html</title>
+</head>
+<body>
+<h2>RegExp物件的使用</h2>
+<hr/>
+<script>
+var regex01 = /^(\w+)@([\w.]+)/;
+var regex02 = /(\d{4})-(\d{2})-(\d{2})/;
+var email = "hueyan@ms2.hinet.net";
+var date = '2016-12-25'
+document.write("test()方法 = " + regex01.test(email) + "<br/>");
+document.write("exec()方法 = " + regex02.exec(date) + "<br/>");
+</script>
+</body>
+</html>

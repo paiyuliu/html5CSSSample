@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_5_3.html</title>
+<style>
+.highline { border : 3px solid red; }
+.hidden { display : none }
+</style> 
+<script>
+function addHighLine(event) {
+   event.target.setAttribute("class", "highline");
+}
+function addCart(event) { 
+   var m = document.getElementById("product");
+   m.style.display = "none";
+   var i = document.getElementById("itemName");    
+   i.innerHTML = "Android平板電腦已經放入購物車<br/>";
+   var q = document.getElementById("quantity");
+   q.innerHTML = "購物車有1件商品";
+   var c = document.getElementById("cart");    
+   c.style.display = "block";
+}
+function initial() {
+   var m = document.getElementById("product");
+   m.addEventListener("mousedown", addHighLine, false);
+   m.addEventListener("mouseup", addCart, false);
+}
+</script>
+</head>
+<body onload="initial()">
+<div id="product">
+<h3>Android平板電腦</h3>
+<div><img src="table.png" title="Android"></div>
+<p>第一台 NVIDIA _Tegra_2 雙核心,  
+第一台支援高解析影音媒體,  
+支援 1080p 高解析影片與串流高畫質 Flash,  
+影音擴充多元又便利 
+</p>
+<p>現金價: $8999</p>
+<div>請點選商品加入購物車</div>
+</div>
+<div class="hidden" id="cart">
+<p id="itemName"></p>
+<h3 id="quantity"></h3>
+</div>
+</body>
+</html>

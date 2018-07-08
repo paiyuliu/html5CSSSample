@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch12_3_1.html</title>
+<script>
+function showElement(event) {
+   var ele = document.getElementById("ele");
+   var type = document.getElementById("type");
+   ele.innerHTML = event.target.tagName;
+   type.innerHTML = event.type;
+   // 更改元素的背景色彩
+   event.target.style.background = "yellow";
+}
+</script>
+</head>
+<body>
+<h2 id="myH2">元素和事件名稱</h2>
+<hr/>
+<p id="myP">按一下按鈕顯示HTML元素和事件</p>
+<form>
+<input type="button" id="myBtn" value="按一下">
+</form><br/>
+<script>
+var h2 = document.getElementById("myH2");
+h2.onclick = showElement;
+var p = document.getElementById("myP");
+p.onclick = showElement;
+var btn = document.getElementById("myBtn");
+btn.addEventListener("click", showElement, false);
+</script>
+標籤: <span id="ele"></span><br/>
+事件: <span id="type"></span>
+</body>
+</html>

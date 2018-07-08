@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch15_6_1.html</title>
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('#price').val(199);
+   $('input.cal').click(function() {
+      var price = parseInt($('#price').val());
+      var quantity = parseInt($('#quantity').val());
+      var amount;
+      var discount=$('input[name=discount]:checked').val();
+      amount = (price * quantity) * discount / 100;
+      if ($('#ship').is(':checked')) {
+         amount = amount + 100;
+      }  
+      amount = amount.toFixed(2);
+      alert("金額: " + amount);
+      return false;
+   });
+});
+</script>
+</head>
+<body>
+<form>
+  <label for="quantity">數量:</label>
+  <input type="text" id="quantity" value="1"/><br/>
+  <label for="price">單價: </label>
+  <input type="text" id="price"><br/>
+  <input type="radio" name="discount" id="nine" 
+         value="90" checked/>9折
+  <input type="radio" name="discount" id="eight" 
+         value="80"/>8折<br/>  
+  <input type="checkbox" id="ship" checked/>外送<br/>
+  <input type="button" class="cal" value="計算總價"/>
+</form>
+</body>
+</html> 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch10_2_4.html</title>
+<script>
+// 捲動多少位置
+function scrollWin() {
+   window.scroll(0,100);
+}
+// 捲動視窗一定的位移
+function scrollByWin() {
+   window.scrollBy(0,20);
+}
+// 捲動視窗到指定位置
+function scrollToWin() {
+   window.scrollTo(0,50);
+}
+</script>
+</head>
+<body>
+<h2>視窗捲動</h2>
+<hr/>
+<form>
+<input type="button" onclick="scrollWin()" value="捲動">
+<input type="button" onclick="scrollByWin()" value="位移捲動">
+<input type="button" onclick="scrollToWin()" value="捲動到">
+</form>
+<script>
+var obj;
+for(obj in window.document){
+    document.write(obj + " : " + window.document[obj] + "<br/>");
+}
+</script>
+</body>
+</html>

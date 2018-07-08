@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch15_2_1.html</title>
+<style>
+.blue { color: blue; }
+.red { color: red; }
+</style>
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('#list').addClass('red');
+   $('#list li:last').addClass('blue');
+});
+</script>
+</head>
+<body>
+<h2>建立第一個jQuery程式</h2>
+<ol id="list">
+  <li>JavaScript</li>
+  <li>jQuery</li>
+  <li>CSS</li>
+  <li>HTML</li> 
+</ol>
+</body>
+</html> 

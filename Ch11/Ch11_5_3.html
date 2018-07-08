@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_5_3.html</title>
+<script>
+function getFirstandSecond() {
+   var img = document.getElementById("myImg");
+   var att = img.attributes[0];
+   var att1= img.attributes[1];
+   var att2= img.attributes[2];
+   alert("1: " + att.name + "/" + att.value +
+         "\n2: " + att1.name + "/" + att1.value +
+         "\n3: " + att2.name + "/" + att2.value);   
+}
+function getAtt1() {
+   var img = document.getElementById("myImg");
+   var att = img.attributes.src;
+   alert("src屬性值: " + att.value);   
+}
+function getAtt2() {
+   var img = document.getElementById("myImg");
+   var att = img.attributes["ID"];
+   alert("id屬性值: " + att.value);   
+}
+</script>
+</head>
+<body>
+<h2>HTML元素的屬性清單</h2>
+<hr/>
+<img id="myImg" class="fg" src="1.gif"/>
+<form>
+<input type="button" onclick="getFirstandSecond()" value="取得屬性清單">
+<input type="button" onclick="getAtt1()" value="取得src屬性值">
+<input type="button" onclick="getAtt2()" value="取得id屬性值">
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch11_3_3.html</title>
+<script>
+function showEle1() {
+   var objUL = document.getElementById("myUL");
+   var objEle1 = objUL.firstElementChild;
+   var objEle2 = objUL.lastElementChild;
+   alert(objEle1.textContent + "/" +
+         objEle2.textContent);
+}
+function showEle2() {
+   var objLi = document.getElementById("myLI1");
+   var objEle = objLi.previousElementSibling;
+   alert(objEle.firstChild.data);
+}
+function showEle3() {
+   var objLi = document.getElementById("myLI2");
+   var objEle = objLi.nextElementSibling;
+   alert(objEle.innerHTML);
+}
+</script>
+</head>
+<body>
+<h2>瀏覽HTML元素</h2>
+<hr/>
+<ul id="myUL">
+   <li>CSS</li>
+   <li style="color:red" id="myLI" 
+       onclick="showEle1()">JavaScript</li>
+   <li style="color:red" id="myLI1"
+       onclick="showEle2()">VBScript</li>
+   <li style="color:red" id="myLI2"
+       onclick="showEle3()">XML</li>
+   <li>HTML</li>    
+</ul>
+</body>
+</html>
